@@ -1,0 +1,51 @@
+Number of rows: 9994
+Number of columns: 21
+
+Column names and data types:
+Row ID             int64
+Order ID          object
+Order Date        object
+Ship Date         object
+Ship Mode         object
+Customer ID       object
+Customer Name     object
+Segment           object
+Country           object
+City              object
+State             object
+Postal Code        int64
+Region            object
+Product ID        object
+Category          object
+Sub-Category      object
+Product Name      object
+Sales            float64
+Quantity           int64
+Discount         float64
+Profit           float64
+
+Missing Values and Percentage:
+               Missing Count  Missing %
+Row ID                     0        0.0
+Order ID                   0        0.0
+Order Date                 0        0.0
+Ship Date                  0        0.0
+Ship Mode                  0        0.0
+Customer ID                0        0.0
+Customer Name              0        0.0
+Segment                    0        0.0
+Country                    0        0.0
+City                       0        0.0
+State                      0        0.0
+Postal Code                0        0.0
+Region                     0        0.0
+Product ID                 0        0.0
+Category                   0        0.0
+Sub-Category               0        0.0
+Product Name               0        0.0
+Sales                      0        0.0
+Quantity                   0        0.0
+Discount                   0        0.0
+Profit                     0        0.0
+
+Number of duplicate rows: 0

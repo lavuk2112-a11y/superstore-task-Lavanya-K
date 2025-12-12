@@ -1,0 +1,14 @@
+CREATE DATABASE superstore_db;
+USE superstore_db;
+select * from cleaned_superstore;
+SELECT SUM(Sales) AS Total_Sales,SUM(Profit) AS Total_Profit,SUM(Quantity) AS Total_Quantity FROM cleaned_superstore;
+SELECT DATE_FORMAT(`Order Date`, '%Y-%m') AS Month,SUM(Sales) AS Monthly_Sales FROM cleaned_superstore GROUP BY Month ORDER BY Month;
+SELECT YEAR(`Order Date`) AS Year,SUM(Sales) AS Total_Sales FROM cleaned_superstore GROUP BY Year ORDER BY Year;
+SELECT Product_Name,SUM(Sales) AS Total_Sales FROM cleaned_superstore GROUP BY Product_Name ORDER BY Total_Sales DESC LIMIT 10;
+SELECT `Customer Name`, SUM(Sales) AS Revenue FROM cleaned_superstore GROUP BY `Customer Name` ORDER BY Revenue DESC LIMIT 10;
+SELECT Category,SUM(Profit) AS Total_Profit,SUM(Sales) AS Total_Sales,(SUM(Profit) / SUM(Sales)) * 100 AS Profit_Margin_Percentage FROM cleaned_superstore GROUP BY Category;
+SELECT Region,SUM(Sales) AS Total_Sales,SUM(Profit) AS Total_Profit FROM cleaned_superstore GROUP BY Region ORDER BY Total_Sales DESC;
+SELECT Discount,SUM(Sales) AS Total_Sales,SUM(Profit) AS Total_Profit FROM cleaned_superstore GROUP BY Discount ORDER BY Discount;
+SELECT `Order ID`,`Product Name`,`Sales`,`Profit`FROM cleaned_superstore WHERE `Profit` < 0 ORDER BY `Profit`;
+SELECT Segment,SUM(Sales) AS Segment_Sales,(SUM(sales)*100.0/(SELECT SUM(Sales) FROM cleaned_superstore)) AS Contribution_Percentage FROM cleaned_superstore GROUP BY Segment;
+SELECT `Order ID`,DATEDIFF(STR_TO_DATE(`Ship Date`, '%m/%d/%Y'),STR_TO_DATE(`Order Date`, '%m/%d/%Y')) AS Shipping_Time_Days FROM cleaned_superstore;
